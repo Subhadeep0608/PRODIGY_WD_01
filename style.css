@@ -1,0 +1,249 @@
+* {
+  margin: 0;
+  padding: 0;
+  color: white;
+  box-sizing: border-box;
+}
+/* ---------------------------------------------------------------- */
+body {
+  min-height: 393vh;
+  min-width: 100%;
+}
+/* ---------------------------------------------------------------- */
+nav {
+  background-color: rgb(7, 15, 43);
+  height: 25vh;
+  width: 100%; /*for full width */
+  position: fixed; /* Fixed position */
+  top: 0; /*for top*/
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 10;
+}
+
+nav .right {
+  display: flex;
+  padding: 7vw;
+}
+
+#logo {
+  width: 11vw;
+  height: 11vw;
+  border-radius: 10vh;
+  border: 6px solid rgb(83, 92, 145);
+}
+nav .left {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  padding: 1vw;
+}
+
+nav .menu {
+  margin: 15px;
+  padding: 15px;
+  color: rgb(83, 92, 145);
+  text-decoration: none;
+  border: 2px solid rgb(83, 92, 145);
+  border-radius: 5vh;
+}
+.menu:hover {
+  background-color: rgb(83, 92, 145);
+  color: white;
+}
+
+.action_btn {
+  margin: 15px;
+  padding: 15px 25px;
+  background-color: orange;
+  color: black;
+  border: 2px solid rgb(83, 92, 145);
+  border-radius: 5vh;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.action_btn:hover {
+  background-color: rgb(83, 92, 145);
+  color: white;
+}
+
+button {
+  background-color: rgb(7, 15, 43);
+}
+#toggle_btn {
+  font-variation-settings: 0, 400, 0, 24;
+  display: none;
+}
+
+/* ---------------------------------------------------------------- */
+main {
+  min-height: 185vh;
+}
+
+.intro {
+  min-height: 55vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: "Rye", serif;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 3vw;
+  background-image: linear-gradient(
+      0deg,
+      rgba(83, 92, 145, 0.58),
+      rgba(146, 144, 195, 0.58)
+    ),
+    url(image/intro.png);
+  background-position: center;
+  background-size: 100vw 55vh;
+  position: fixed;
+  top: 20vh;
+  width: 100%;
+  z-index: -1;
+}
+
+.box0 {
+  min-height: 75vh;
+  width: 100%;
+}
+/* -------------------------------------------------------------------- */
+.text {
+  display: flex;
+  box-sizing: border-box;
+  width: 60vw;
+  height: 40vh;
+  flex-direction: column;
+  align-items: center;
+}
+
+.head {
+    word-wrap: break-word;
+    font-size: calc(7px + 1vw); /* Scales font size dynamically */
+  padding: 20px 0px 20px 20px;
+  font-family: "Rye", serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.para {
+    word-wrap: break-word;
+    font-size: calc(7px + 1vw); /* Scales font size dynamically */
+  font-family: "Bokor", system-ui;
+  font-weight: 400;
+  font-style: normal;
+  padding: 0px 20px;
+}
+
+.img {
+  display: flex;
+  box-sizing: border-box;
+  justify-content: center;
+  align-self: center;
+  width: 60vw;
+  height: 40vh;
+}
+.image {
+    max-width: 100%; /*adjust the image size*/
+    height: auto;
+  border: 4px solid rgb(83, 92, 145);
+  border-radius: 30px;
+}
+/* ----------------------------------------------------------------------- */
+.box {
+  min-height: 90vh;
+  display: flex;
+  background-color: rgb(27, 26, 85);
+  box-sizing: border-box;
+  width: 100%;
+  border: 4px solid rgb(83, 92, 145);
+}
+
+/*-----------------------------------------------------------------*/
+
+/* ---------------------------------------------------------------- */
+footer {
+  display: flex;
+  background-color: rgb(146, 144, 195);
+  height: 50vh;
+  font-size: 2vw;
+  justify-content: center;
+  align-items: center;
+  flex-shrink: 0;
+}
+/* ---------------------------------------------------------------- */
+/* dropdown menu */
+.dropdown_menu{
+  position: absolute;
+  width: 100%;
+  top: 25vh;
+  background-color:rgb(146, 144, 195,0.1) ;
+  backdrop-filter: blur(15px);
+  border-radius: 10px;
+  overflow: hidden;
+  display: none;
+}
+.dropdown_menu li{
+  width: 100%;
+  padding: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+}
+
+.ddmenu:hover {
+  width: 100%;
+  height: 5vh;
+  display: flex;
+  justify-content: center;
+  background-color: rgb(83, 92, 145);
+  color: white;
+}
+.dropdown_menu .action_btn{
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.dropdown_menu.show {
+  display: block; /* Make it visible when .open class is added */
+  position: fixed;
+  z-index: 5;
+}
+/* ---------------------------------------------------- */
+/* Responsive Design */
+@media (max-width: 890px) {
+  .menu,
+  .action_btn {
+    display: none;
+  }
+  #toggle_btn {
+    margin: 20px;
+    display: block;
+  }
+  /* .dropdown_menu {
+    display: block;
+  } */
+}
+/* ---------------------------------------------------------------- */
+/* Responsive Design */
+@media (max-width: 450px) {
+    nav {
+      justify-content: center; /* Center the logo */
+    }
+  
+    #logo {
+      width: 100px; /* Adjust size for mobile */
+      height: 100px;
+    }
+  
+    nav .left,
+    .menu,
+    .action_btn,
+    #toggle_btn {
+      display: none; /* Hide all other elements */
+    }
+  }
